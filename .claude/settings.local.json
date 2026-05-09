@@ -10,7 +10,10 @@
       "Bash(magick -version)",
       "Bash(python3 -c \"from PIL import Image; print\\('Pillow OK'\\)\")",
       "Bash(python -c \"from PIL import Image; print\\('Pillow OK'\\)\")",
-      "PowerShell(pip install *)"
+      "PowerShell(pip install *)",
+      "Bash(Get-ChildItem -Path \"C:\\\\DEVELOPMENT\\\\nale-luxury-chalet\" -Force)",
+      "Bash(Select-Object Name, PSIsContainer)",
+      "Bash(grep -E \"\\\\.\\(json|js|ts|toml|yaml|yml|lock|xml\\)$\")"
     ]
   }
 }
