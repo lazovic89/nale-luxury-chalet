@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.airbnb.com)",
+      "WebFetch(domain:www.weekendica.com)",
+      "WebFetch(domain:www.booking.com)",
+      "WebFetch(domain:topsmestaj.com)",
+      "WebFetch(domain:www.google.com)",
+      "Bash(magick -version)",
+      "Bash(python3 -c \"from PIL import Image; print\\('Pillow OK'\\)\")",
+      "Bash(python -c \"from PIL import Image; print\\('Pillow OK'\\)\")",
+      "PowerShell(pip install *)"
+    ]
+  }
+}

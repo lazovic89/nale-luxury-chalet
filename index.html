@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luksuzni Chalet Nale — A-Frame odmor u srcu prirode</title>
+  <meta name="description" content="Luksuzni Chalet Nale — ekskluzivna drvena A-frame kuća za iznajmljivanje u opštini Bratunac, Republika Srpska. Privatni bazen, sauna i četinarska šuma." />
+  <link rel="alternate" hreflang="sr"       href="https://naleluxchalet.com/" />
+  <link rel="alternate" hreflang="en"       href="https://naleluxchalet.com/en/" />
+  <link rel="alternate" hreflang="de"       href="https://naleluxchalet.com/de/" />
+  <link rel="alternate" hreflang="fr"       href="https://naleluxchalet.com/fr/" />
+  <link rel="alternate" hreflang="x-default" href="https://naleluxchalet.com/" />
+  <link rel="icon" type="image/x-icon"            href="logo/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32"  href="logo/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16"  href="logo/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180"     href="logo/apple-touch-icon.png" />
+  <link rel="manifest"                             href="logo/site.webmanifest" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: '#c9a96e', 'gold-light': '#e4c99a', 'gold-dark': '#a0784a',
+            charcoal: '#1a1a1a', 'charcoal-light': '#2a2a2a', cream: '#f5f0e8',
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .hero-bg {
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.6) 100%),
+        url('assets/pool%20at%20night%20with%20house%20in%20background.webp');
+      background-size: cover; background-position: center; background-attachment: fixed;
+    }
+    .nav-scrolled { background-color: rgba(10,10,10,0.95) !important; backdrop-filter: blur(12px); }
+    .gallery-item img { transition: transform 0.6s ease; }
+    .gallery-item:hover img { transform: scale(1.05); }
+    .amenity-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+    .gold-divider { width: 60px; height: 1px; background: linear-gradient(to right, transparent, #c9a96e, transparent); }
+    .section-label { letter-spacing: 0.25em; font-size: 0.7rem; text-transform: uppercase; }
+  </style>
+</head>
+<body class="bg-charcoal text-cream font-sans antialiased">
+
+  <!-- NAV -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-5 px-6 md:px-12 flex items-center justify-between">
+    <a href="#home"><img src="logo/android-chrome-192x192.png" alt="Luxury Chalet Nale" class="h-10 w-auto" /></a>
+    <div class="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase text-cream/80 font-sans">
+      <a href="#about" class="hover:text-gold transition-colors">O nama</a>
+      <a href="#gallery" class="hover:text-gold transition-colors">Galerija</a>
+      <a href="#amenities" class="hover:text-gold transition-colors">Sadržaji</a>
+      <a href="#location" class="hover:text-gold transition-colors">Lokacija</a>
+      <div class="flex items-center gap-1.5 border-l border-white/10 pl-6 text-xs tracking-widest">
+        <span class="text-gold font-semibold">SR</span><span class="text-cream/20">·</span>
+        <a href="en/" class="text-cream/50 hover:text-gold transition-colors">EN</a><span class="text-cream/20">·</span>
+        <a href="de/" class="text-cream/50 hover:text-gold transition-colors">DE</a><span class="text-cream/20">·</span>
+        <a href="fr/" class="text-cream/50 hover:text-gold transition-colors">FR</a>
+      </div>
+      <a href="#contact" class="border border-gold text-gold px-5 py-2 hover:bg-gold hover:text-charcoal transition-all">Rezervišite</a>
+    </div>
+    <button class="md:hidden text-cream" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </nav>
+
+  <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-charcoal/98 flex flex-col items-center justify-center gap-7 text-sm tracking-widest uppercase">
+    <button class="absolute top-6 right-6 text-cream" onclick="document.getElementById('mobile-menu').classList.add('hidden')">✕</button>
+    <a href="#about"     onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-gold transition-colors">O nama</a>
+    <a href="#gallery"   onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-gold transition-colors">Galerija</a>
+    <a href="#amenities" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-gold transition-colors">Sadržaji</a>
+    <a href="#location"  onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-gold transition-colors">Lokacija</a>
+    <div class="flex items-center gap-2 text-xs">
+      <span class="text-gold font-semibold">SR</span><span class="text-cream/20">·</span>
+      <a href="en/" class="text-cream/60 hover:text-gold">EN</a><span class="text-cream/20">·</span>
+      <a href="de/" class="text-cream/60 hover:text-gold">DE</a><span class="text-cream/20">·</span>
+      <a href="fr/" class="text-cream/60 hover:text-gold">FR</a>
+    </div>
+    <a href="#contact" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="border border-gold text-gold px-8 py-3 hover:bg-gold hover:text-charcoal transition-all">Rezervišite</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="home" class="hero-bg min-h-screen flex flex-col items-center justify-center text-center px-6 relative">
+    <div class="max-w-3xl">
+      <p class="section-label text-gold tracking-[0.3em] mb-6">Ekskluzivni najam · Bosna i Hercegovina</p>
+      <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-light text-white leading-tight mb-6">
+        Luksuzni<br /><em>Chalet Nale</em>
+      </h1>
+      <div class="gold-divider mx-auto mb-6"></div>
+      <p class="font-sans font-light text-cream/80 text-base md:text-lg leading-relaxed max-w-xl mx-auto mb-10">
+        Remek-djelo drveta i prirode — vaše privatno A-frame utočište okruženo drevnim četinarima, samo trenutak od civilizacije, a svjetovima udaljeno od svega ostalog.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#contact" class="bg-gold text-charcoal px-8 py-4 text-xs tracking-widest uppercase font-medium hover:bg-gold-light transition-colors">Rezervišite boravak</a>
+        <a href="#gallery" class="border border-cream/40 text-cream px-8 py-4 text-xs tracking-widest uppercase hover:border-gold hover:text-gold transition-colors">Pogledajte galeriju</a>
+      </div>
+    </div>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-cream/40">
+      <span class="section-label text-[0.6rem]">Skrolujte</span>
+      <div class="w-px h-12 bg-gradient-to-b from-cream/40 to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- STRIP -->
+  <section class="bg-gold py-5 px-6">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-x-12 gap-y-2 text-charcoal text-xs tracking-widest uppercase font-medium">
+      <span>✦ Privatni bazen</span><span>✦ Finska sauna</span><span>✦ Četinarska šuma</span>
+      <span>✦ A-Frame arhitektura</span><span>✦ Roštilj na otvorenom</span><span>✦ Luksuz 5 zvjezdica</span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-28 px-6 md:px-12">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="section-label text-gold mb-4">O chaletu</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-light leading-tight mb-6">
+          Gdje drvo susreće<br /><em class="text-gold">Vječni luksuz</em>
+        </h2>
+        <div class="gold-divider mb-8"></div>
+        <p class="text-cream/70 font-light leading-relaxed mb-5">
+          Luksuzni Chalet Nale je prelijepo drveno A-frame utočište smješteno u privatnoj četinarskoj šumi u srcu opštine Bratunac, Republika Srpska. Ikonična trokutasta silueta objekta uzdiže se iznad krošnji drveća, privlačeći pažnju i izazivajući divljenje.
+        </p>
+        <p class="text-cream/70 font-light leading-relaxed mb-5">
+          Unutra, izloženi drveni okviri, staklene površine od poda do plafona i pažljivo odabrani namještaj stvaraju atmosferu topline i diskretne elegancije. Svaki detalj je promišljen — od pucketanja vatre do tople rasvjete u sumrak.
+        </p>
+        <p class="text-cream/70 font-light leading-relaxed mb-10">
+          Izađite i uživajte u privatnom bazenu, opustite se u finskoj sauni ili se okupite oko roštilja na otvorenom. Nale nije samo smještaj — to je iskustvo osmišljeno da obnovi vaša čula i poveže vas s prirodom.
+        </p>
+        <a href="#contact" class="inline-block border border-gold text-gold px-8 py-3 text-xs tracking-widest uppercase hover:bg-gold hover:text-charcoal transition-all">Napravite rezervaciju</a>
+      </div>
+      <div class="relative">
+        <div class="overflow-hidden rounded-sm">
+          <img src="assets/house%20big%20picture.webp" alt="Luksuzni Chalet Nale eksterijer" class="w-full h-[550px] object-cover" />
+        </div>
+        <div class="absolute -bottom-6 -left-6 bg-charcoal-light border border-gold/20 p-6 hidden md:block">
+          <p class="font-serif text-3xl text-gold font-light">5.0</p>
+          <p class="text-cream/60 text-xs tracking-widest uppercase mt-1">Ocjena gostiju</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-20 px-6 md:px-12 bg-charcoal-light">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="section-label text-gold mb-4">Foto galerija</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-light">Doživite iskustvo <em class="text-gold">Nalea</em></h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-3">
+        <div class="gallery-item col-span-2 overflow-hidden rounded-sm h-72 md:h-80"><img src="assets/spot%20view%20from%20the%20sky.webp" alt="Pogled iz zraka na Luksuzni Chalet Nale" class="w-full h-full object-cover" /></div>
+        <div class="gallery-item overflow-hidden rounded-sm h-72 md:h-80"><img src="assets/pool-sunrise.webp" alt="Privatni bazen u izlasku sunca" class="w-full h-full object-cover" /></div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-3">
+        <div class="gallery-item overflow-hidden rounded-sm h-56"><img src="assets/sauna.webp" alt="Finska sauna u Chaletu Nale" class="w-full h-full object-cover" /></div>
+        <div class="gallery-item overflow-hidden rounded-sm h-56"><img src="assets/interior-1.webp" alt="Luksuzni drveni enterijer" class="w-full h-full object-cover" /></div>
+        <div class="gallery-item overflow-hidden rounded-sm h-56"><img src="assets/double%20bed%20room.webp" alt="Spavaća soba s bračnim krevetom" class="w-full h-full object-cover" /></div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-3">
+        <div class="gallery-item col-span-2 overflow-hidden rounded-sm h-64"><img src="assets/pool%20with%20house%20in%20background%20at%20sunrise.webp" alt="Bazen s chaletom u pozadini pri izlasku sunca" class="w-full h-full object-cover" /></div>
+        <div class="gallery-item overflow-hidden rounded-sm h-64"><img src="assets/grill.webp" alt="Vanjski prostor za roštilj" class="w-full h-full object-cover" /></div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-3">
+        <div class="gallery-item overflow-hidden rounded-sm h-48"><img src="assets/view%20from%20house%20sunfall.webp" alt="Pogled na zalazak sunca iz Chaleta Nale" class="w-full h-full object-cover" /></div>
+        <div class="gallery-item overflow-hidden rounded-sm h-48"><img src="assets/pool2.webp" alt="Privatni bazen" class="w-full h-full object-cover" /></div>
+        <div class="gallery-item overflow-hidden rounded-sm h-48"><img src="assets/two%20bed%20room.webp" alt="Soba s dva kreveta" class="w-full h-full object-cover" /></div>
+        <div class="gallery-item overflow-hidden rounded-sm h-48"><img src="assets/inside%20the%20house.webp" alt="Unutar Chaleta Nale" class="w-full h-full object-cover" /></div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-3">
+        <div class="gallery-item overflow-hidden rounded-sm h-56"><img src="assets/forest%20path%20need%20house.webp" alt="Šumska staza do Chaleta Nale" class="w-full h-full object-cover" /></div>
+        <div class="gallery-item overflow-hidden rounded-sm h-56"><img src="assets/dinning%20table%20infront%20the%20house.webp" alt="Vanjska trpezarija ispred chaleta" class="w-full h-full object-cover" /></div>
+        <div class="gallery-item overflow-hidden rounded-sm h-56"><img src="assets/pool%20with%20town%20in%20background.webp" alt="Bazen s pogledom na grad" class="w-full h-full object-cover" /></div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div class="gallery-item overflow-hidden rounded-sm h-48"><img src="assets/grill%20spot.webp" alt="Prostor za roštilj" class="w-full h-full object-cover" /></div>
+        <div class="gallery-item overflow-hidden rounded-sm h-48"><img src="assets/double%20bed%20room%202.webp" alt="Druga spavaća soba s bračnim krevetom" class="w-full h-full object-cover" /></div>
+        <div class="gallery-item overflow-hidden rounded-sm h-48"><img src="assets/pool-grill.webp" alt="Bazen i roštilj" class="w-full h-full object-cover" /></div>
+        <div class="gallery-item overflow-hidden rounded-sm h-48"><img src="assets/toilete.webp" alt="Kupaonica u Chaletu Nale" class="w-full h-full object-cover" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMENITIES -->
+  <section id="amenities" class="py-28 px-6 md:px-12">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="section-label text-gold mb-4">Šta je uključeno</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-light">Svaki <em class="text-gold">Komfor</em> vas čeka</h2>
+        <div class="gold-divider mx-auto mt-6"></div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <div class="amenity-card bg-charcoal-light border border-white/5 p-7 text-center transition-all duration-300 rounded-sm"><div class="text-gold text-3xl mb-4">🏊</div><h3 class="font-serif text-lg text-cream mb-2">Privatni bazen</h3><p class="text-cream/50 text-xs leading-relaxed">Vaš vlastiti bazen, ekskluzivno za goste Nalea</p></div>
+        <div class="amenity-card bg-charcoal-light border border-white/5 p-7 text-center transition-all duration-300 rounded-sm"><div class="text-gold text-3xl mb-4">🧖</div><h3 class="font-serif text-lg text-cream mb-2">Finska sauna</h3><p class="text-cream/50 text-xs leading-relaxed">Autentična sauna na drva za pravo opuštanje</p></div>
+        <div class="amenity-card bg-charcoal-light border border-white/5 p-7 text-center transition-all duration-300 rounded-sm"><div class="text-gold text-3xl mb-4">🌲</div><h3 class="font-serif text-lg text-cream mb-2">Privatna šuma</h3><p class="text-cream/50 text-xs leading-relaxed">Okruženi privatnom četinarskom šumom</p></div>
+        <div class="amenity-card bg-charcoal-light border border-white/5 p-7 text-center transition-all duration-300 rounded-sm"><div class="text-gold text-3xl mb-4">🔥</div><h3 class="font-serif text-lg text-cream mb-2">Roštilj na otvorenom</h3><p class="text-cream/50 text-xs leading-relaxed">Premium vanjski roštilj za objedovanje na otvorenom</p></div>
+        <div class="amenity-card bg-charcoal-light border border-white/5 p-7 text-center transition-all duration-300 rounded-sm"><div class="text-gold text-3xl mb-4">🏔️</div><h3 class="font-serif text-lg text-cream mb-2">A-Frame dizajn</h3><p class="text-cream/50 text-xs leading-relaxed">Ikonična trokutasta arhitektura od punog drveta</p></div>
+        <div class="amenity-card bg-charcoal-light border border-white/5 p-7 text-center transition-all duration-300 rounded-sm"><div class="text-gold text-3xl mb-4">📶</div><h3 class="font-serif text-lg text-cream mb-2">Brzi WiFi</h3><p class="text-cream/50 text-xs leading-relaxed">Ostanite povezani dok se odvajate od stresa</p></div>
+        <div class="amenity-card bg-charcoal-light border border-white/5 p-7 text-center transition-all duration-300 rounded-sm"><div class="text-gold text-3xl mb-4">🚗</div><h3 class="font-serif text-lg text-cream mb-2">Besplatan parking</h3><p class="text-cream/50 text-xs leading-relaxed">Siguran privatni parking na licu mjesta</p></div>
+        <div class="amenity-card bg-charcoal-light border border-white/5 p-7 text-center transition-all duration-300 rounded-sm"><div class="text-gold text-3xl mb-4">🌙</div><h3 class="font-serif text-lg text-cream mb-2">Posmatranje zvijezda</h3><p class="text-cream/50 text-xs leading-relaxed">Tamno nebo i vedre noći za nezaboravan doživljaj</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNER -->
+  <section class="relative py-0 overflow-hidden">
+    <div class="relative h-[500px] flex items-center justify-center text-center px-6"
+      style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('assets/sky%20above%20the%20house.webp'); background-size: cover; background-position: center; background-attachment: fixed;">
+      <div class="max-w-2xl">
+        <p class="section-label text-gold mb-5">Naše obećanje</p>
+        <h2 class="font-serif text-4xl md:text-6xl font-light text-white leading-tight mb-6">
+          "Pobjegnite od svakodnevice.<br /><em>Zagrlite izvanredno."</em>
+        </h2>
+        <div class="gold-divider mx-auto mb-6"></div>
+        <p class="text-cream/70 font-light text-base">Opština Bratunac, Republika Srpska — svjetovima udaljeno od svega ostalog.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section id="location" class="py-28 px-6 md:px-12 bg-charcoal-light">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+        <div>
+          <p class="section-label text-gold mb-4">Pronađite nas</p>
+          <h2 class="font-serif text-4xl md:text-5xl font-light mb-6">Naša <em class="text-gold">Lokacija</em></h2>
+          <div class="gold-divider mb-8"></div>
+          <p class="text-cream/70 font-light leading-relaxed mb-8">
+            Luksuzni Chalet Nale smješten je u opštini Bratunac, Republika Srpska, Bosna i Hercegovina. Okružen privatnom četinarskom šumom uz obale rijeke Drine, chalet nudi savršenu ravnotežu između izolacije i dostupnosti.
+          </p>
+          <div class="space-y-5">
+            <div class="flex items-start gap-4"><span class="text-gold mt-0.5">📍</span><div><p class="text-cream/90 text-sm font-medium mb-0.5">Adresa</p><p class="text-cream/55 text-sm">Opština Bratunac<br />Republika Srpska, Bosna i Hercegovina</p></div></div>
+            <div class="flex items-start gap-4"><span class="text-gold mt-0.5">🚗</span><div><p class="text-cream/90 text-sm font-medium mb-0.5">Automobilom</p><p class="text-cream/55 text-sm">~2.5 sata od Sarajeva<br />~2.5 sata od Beograda</p></div></div>
+            <div class="flex items-start gap-4"><span class="text-gold mt-0.5">✈️</span><div><p class="text-cream/90 text-sm font-medium mb-0.5">Najbliži aerodrom</p><p class="text-cream/55 text-sm">Aerodrom Sarajevo (SJJ) ~160 km<br />Aerodrom Tuzla (TZL) ~100 km<br />Aerodrom Beograd Nikola Tesla (BEG) ~200 km</p></div></div>
+          </div>
+          <a href="https://www.google.com/maps/place/Luxury+chalet+Nale/@44.18068,19.3222897,567m" target="_blank" rel="noopener"
+            class="inline-flex items-center gap-2 border border-gold text-gold px-6 py-3 text-xs tracking-widest uppercase mt-10 hover:bg-gold hover:text-charcoal transition-all">
+            Otvori u Google Maps
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+        <div class="rounded-sm overflow-hidden shadow-2xl border border-white/5 h-[420px]">
+          <iframe title="Lokacija Luksuznog Chaleta Nale" width="100%" height="100%" frameborder="0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1134.5!2d19.3222897!3d44.18068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47590b001b3164cd%3A0xbe4a8a8fba83ac89!2sLuxury%20chalet%20Nale!5e1!3m2!1sen!2srs!4v1746780000000!5m2!1sen!2srs">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-28 px-6 md:px-12">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="section-label text-gold mb-4">Kontaktirajte nas</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-light">Rezervišite <em class="text-gold">Boravak</em></h2>
+        <div class="gold-divider mx-auto mt-6 mb-4"></div>
+        <p class="text-cream/55 font-light max-w-md mx-auto text-sm">Obratite nam se direktno da provjerite dostupnost i rezervišete vaš ekskluzivni odmor u Chaletu Nale.</p>
+      </div>
+      <div class="max-w-xl mx-auto space-y-8">
+        <div class="flex items-start gap-5">
+          <div class="w-12 h-12 border border-gold/30 flex items-center justify-center text-gold text-lg flex-shrink-0">📞</div>
+          <div>
+            <p class="text-cream/50 text-xs tracking-widest uppercase mb-2">Telefon / WhatsApp / Viber</p>
+            <a href="tel:+38765227049" class="block text-cream text-lg font-light hover:text-gold transition-colors mb-3">065 227 049</a>
+            <div class="flex items-center gap-3">
+              <a href="https://wa.me/38765227049" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#25D366] text-white text-xs tracking-widest uppercase font-medium px-4 py-2 rounded-sm hover:brightness-110 transition-all">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.852L.057 23.428a.75.75 0 00.916.916l5.657-1.485A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.715 9.715 0 01-4.95-1.355l-.355-.21-3.676.964.981-3.584-.23-.368A9.716 9.716 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+                WhatsApp
+              </a>
+              <a href="viber://chat?number=%2B38765227049" class="inline-flex items-center gap-2 bg-[#7360F2] text-white text-xs tracking-widest uppercase font-medium px-4 py-2 rounded-sm hover:brightness-110 transition-all">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.985.015C9.89.015 4.898.56 2.534 2.718 1.018 4.234.504 6.46.441 9.19c-.063 2.73-.126 7.845 4.806 9.234h.004l-.003 2.117s-.034.882.547 1.06c.696.215 1.106-.45 1.773-1.167.367-.394.872-.973 1.253-1.41 3.451.29 6.107-.374 6.406-.47.696-.226 4.637-.73 5.277-5.959.661-5.387-.32-8.79-2.52-10.32C16.297.47 13.49.014 11.985.014zm.044 1.697c1.357 0 3.859.36 5.556 1.893 1.457 1.312 2.159 3.963 1.6 8.64-.52 4.234-3.592 4.541-4.175 4.73-.248.08-2.584.664-5.591.463 0 0-2.217 2.674-2.91 3.372-.11.111-.235.154-.319.132-.12-.033-.153-.17-.15-.373l.038-3.286c-4.155-1.152-3.93-5.468-3.881-7.827.05-2.357.45-4.18 1.636-5.303 1.97-1.784 5.85-2.441 8.196-2.441z"/></svg>
+                Viber
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center gap-5 group"><div class="w-12 h-12 border border-gold/30 flex items-center justify-center text-gold text-lg group-hover:bg-gold group-hover:text-charcoal transition-all flex-shrink-0">✉️</div><div><p class="text-cream/50 text-xs tracking-widest uppercase mb-1">Email</p><a href="mailto:naleluxury@gmail.com" class="text-cream text-lg font-light hover:text-gold transition-colors">naleluxury@gmail.com</a></div></div>
+        <div class="flex items-center gap-5 group"><div class="w-12 h-12 border border-gold/30 flex items-center justify-center text-gold text-lg group-hover:bg-gold group-hover:text-charcoal transition-all flex-shrink-0">📸</div><div><p class="text-cream/50 text-xs tracking-widest uppercase mb-1">Instagram</p><a href="https://www.instagram.com/nale_luxury_chalet?igsh=MTE5b2dtOTlhd3Zubw==" target="_blank" rel="noopener" class="text-cream text-lg font-light hover:text-gold transition-colors">@nale_luxury_chalet</a></div></div>
+        <div class="flex items-center gap-5 group"><div class="w-12 h-12 border border-gold/30 flex items-center justify-center text-gold text-lg group-hover:bg-gold group-hover:text-charcoal transition-all flex-shrink-0">🏠</div><div><p class="text-cream/50 text-xs tracking-widest uppercase mb-1">Airbnb</p><a href="https://www.airbnb.rs/rooms/1473216053338812761?unique_share_id=0be45453-c03e-4b45-8d11-10226a3fed3a&viralityEntryPoint=1&s=76" target="_blank" rel="noopener" class="text-cream text-lg font-light hover:text-gold transition-colors">Rezervišite na Airbnb</a></div></div>
+        <div class="flex items-center gap-5 group"><div class="w-12 h-12 border border-gold/30 flex items-center justify-center text-gold text-lg group-hover:bg-gold group-hover:text-charcoal transition-all flex-shrink-0">🏨</div><div><p class="text-cream/50 text-xs tracking-widest uppercase mb-1">Booking.com</p><a href="https://www.booking.com/Share-MHgxLPa" target="_blank" rel="noopener" class="text-cream text-lg font-light hover:text-gold transition-colors">Rezervišite na Booking.com</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black py-12 px-6 md:px-12 border-t border-white/5">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-10 mb-10">
+        <div>
+          <p class="font-serif text-2xl text-cream tracking-widest mb-3">NALE <span class="text-gold">✦</span></p>
+          <p class="text-cream/40 text-sm font-light leading-relaxed max-w-xs">Ekskluzivni A-frame drveni chalet u srcu Republike Srpske, Bosna i Hercegovina.</p>
+        </div>
+        <div>
+          <p class="text-cream/50 text-xs tracking-widest uppercase mb-4">Brzi linkovi</p>
+          <ul class="space-y-2 text-sm font-light text-cream/60">
+            <li><a href="#about" class="hover:text-gold transition-colors">O chaletu</a></li>
+            <li><a href="#gallery" class="hover:text-gold transition-colors">Foto galerija</a></li>
+            <li><a href="#amenities" class="hover:text-gold transition-colors">Sadržaji</a></li>
+            <li><a href="#location" class="hover:text-gold transition-colors">Lokacija</a></li>
+            <li><a href="#contact" class="hover:text-gold transition-colors">Rezervišite</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-cream/50 text-xs tracking-widest uppercase mb-4">Rezervišite na</p>
+          <ul class="space-y-2 text-sm font-light text-cream/60">
+            <li><a href="https://www.airbnb.rs/rooms/1473216053338812761?unique_share_id=0be45453-c03e-4b45-8d11-10226a3fed3a&viralityEntryPoint=1&s=76" target="_blank" rel="noopener" class="hover:text-gold transition-colors">Airbnb</a></li>
+            <li><a href="https://www.booking.com/Share-MHgxLPa" target="_blank" rel="noopener" class="hover:text-gold transition-colors">Booking.com</a></li>
+            <li><a href="https://www.instagram.com/nale_luxury_chalet?igsh=MTE5b2dtOTlhd3Zubw==" target="_blank" rel="noopener" class="hover:text-gold transition-colors">Instagram</a></li>
+            <li><a href="https://www.google.com/maps/place/Luxury+chalet+Nale/@44.18068,19.3222897" target="_blank" rel="noopener" class="hover:text-gold transition-colors">Google Maps</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-cream/25 text-xs">© 2026 Luksuzni Chalet Nale. Sva prava zadržana.</p>
+        <p class="text-cream/25 text-xs">Opština Bratunac · Republika Srpska, BiH · 44.1807° N, 19.3223° E</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="fixed inset-0 z-[9999] bg-black/95 hidden flex-col items-center justify-center" role="dialog" aria-modal="true">
+    <button id="lb-close" class="absolute top-5 right-6 text-white/60 hover:text-white text-3xl leading-none transition-colors z-10" aria-label="Zatvori">✕</button>
+    <div id="lb-counter" class="absolute top-5 left-1/2 -translate-x-1/2 text-cream/40 text-xs tracking-widest uppercase"></div>
+    <button id="lb-prev" class="absolute left-3 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center text-white/50 hover:text-gold transition-colors text-4xl z-10" aria-label="Prethodna">‹</button>
+    <div class="w-full h-full flex items-center justify-center px-16 py-16 select-none">
+      <img id="lb-img" src="" alt="" class="max-w-full max-h-full object-contain rounded-sm shadow-2xl transition-opacity duration-200" />
+    </div>
+    <button id="lb-next" class="absolute right-3 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center text-white/50 hover:text-gold transition-colors text-4xl z-10" aria-label="Sljedeća">›</button>
+  </div>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('nav-scrolled', window.scrollY > 60); });
+
+    const lightbox = document.getElementById('lightbox'), lbImg = document.getElementById('lb-img'),
+          lbCounter = document.getElementById('lb-counter'), lbClose = document.getElementById('lb-close'),
+          lbPrev = document.getElementById('lb-prev'), lbNext = document.getElementById('lb-next');
+    const galleryImgs = Array.from(document.querySelectorAll('.gallery-item img'));
+    let current = 0;
+    function openLightbox(i) { current = i; showImage(); lightbox.classList.remove('hidden'); lightbox.classList.add('flex'); document.body.style.overflow = 'hidden'; }
+    function closeLightbox() { lightbox.classList.add('hidden'); lightbox.classList.remove('flex'); document.body.style.overflow = ''; }
+    function showImage() { const img = galleryImgs[current]; lbImg.style.opacity='0'; lbImg.src=img.src; lbImg.alt=img.alt; lbImg.onload=()=>{lbImg.style.opacity='1';}; if(lbImg.complete) lbImg.style.opacity='1'; lbCounter.textContent=`${current+1} / ${galleryImgs.length}`; }
+    function prev() { current=(current-1+galleryImgs.length)%galleryImgs.length; showImage(); }
+    function next() { current=(current+1)%galleryImgs.length; showImage(); }
+    galleryImgs.forEach((img,i) => { img.parentElement.style.cursor='pointer'; img.parentElement.addEventListener('click',()=>openLightbox(i)); });
+    lbClose.addEventListener('click', closeLightbox);
+    lbPrev.addEventListener('click', prev);
+    lbNext.addEventListener('click', next);
+    lightbox.addEventListener('click', (e) => { if(e.target===lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => { if(lightbox.classList.contains('hidden')) return; if(e.key==='ArrowLeft') prev(); if(e.key==='ArrowRight') next(); if(e.key==='Escape') closeLightbox(); });
+    let touchStartX=0, touchStartY=0;
+    lightbox.addEventListener('touchstart',(e)=>{touchStartX=e.touches[0].clientX;touchStartY=e.touches[0].clientY;},{passive:true});
+    lightbox.addEventListener('touchend',(e)=>{const dx=e.changedTouches[0].clientX-touchStartX,dy=e.changedTouches[0].clientY-touchStartY;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){dx<0?next():prev();}},{passive:true});
+  </script>
+</body>
+</html>
